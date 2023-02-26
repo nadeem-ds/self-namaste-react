@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namaste React</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div id="root">
       <!-- not rendered -->
       <!-- <h1 id="title">Hello Namaste React Course</h1> -->
+
+      <!-- <div id="container">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+      </div> -->
     </div>
 
     <!-- Javascript code -->
@@ -30,17 +36,10 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
 
-    <script>
+    <script src="App.js">
       //first time create something with the help of react using simple way
-      const heading = React.createElement(
-        "h1",
-        { id: "title" },
-        "Namaste React by react"
-      );
+
       //   console.log("heading", heading);
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      //   console.log("roor", root);
-      root.render(heading);
     </script>
   </body>
 </html>
