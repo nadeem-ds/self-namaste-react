@@ -17,12 +17,22 @@ const heading1 = (
     This is react element
   </h1>
 );
+const Title = () => {
+  return (
+    <div>
+      <h1>This is second title component</h1>
+    </div>
+  );
+};
 
 const HeaderComponent = () => {
   return (
     <div>
       {/* use react element inside component */}
       {heading1}
+      
+      {/* use react component inside component */}
+      <Title />
       <h1>This is react functional component</h1>
       <h2>This is second header</h2>
     </div>
