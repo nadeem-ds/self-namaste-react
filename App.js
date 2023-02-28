@@ -8,7 +8,7 @@ import ReactDOM from "react-dom/client";
 //   "Namaste React by react"
 // );
 
-console.log(heading);
+// console.log(heading);
 
 // JSX
 
@@ -19,8 +19,17 @@ const heading1 = (
 );
 
 const HeaderComponent = () => {
-  return <h1>This is main header</h1>;
+  return (
+    <div>
+      <h1>This is main header</h1>
+      <h2>This is second header</h2>
+    </div>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading1);
+// for react element
+// root.render(heading1);
+
+//for react component
+root.render(<HeaderComponent />);
