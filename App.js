@@ -14,14 +14,16 @@ import ReactDOM from "react-dom/client";
 
 const heading1 = (
   <h1 id="heading1" key="head1">
-    Heading 1
+    This is react element
   </h1>
 );
 
 const HeaderComponent = () => {
   return (
     <div>
-      <h1>This is main header</h1>
+      {/* use react element inside component */}
+      {heading1}
+      <h1>This is react functional component</h1>
       <h2>This is second header</h2>
     </div>
   );
