@@ -1,2 +1,5 @@
 # self-namaste-react
-this is readmefile
+## chapter 1 inception 
+## chapter 2 ignite our app
+## chapter 3 laying the foundation
+
