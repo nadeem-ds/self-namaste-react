@@ -30,8 +30,9 @@ const HeaderComponent = () => {
     <div>
       {/* use react element inside component */}
       {heading1}
-      
-      {/* use react component inside component */}
+
+      {/* use react component inside component 2 way to do this */}
+      {/* {Title()} */}
       <Title />
       <h1>This is react functional component</h1>
       <h2>This is second header</h2>
@@ -45,3 +46,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //for react component
 root.render(<HeaderComponent />);
+
+// this will also work
+// root.render(HeaderComponent());
