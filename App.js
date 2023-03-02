@@ -479,10 +479,13 @@ const RestrauntCard = ({
 const Body = () => {
   return (
     <div className="restrauntlist">
+      {restrauntData.map((restaurant) => {
+        return <RestrauntCard {...restaurant.data} />;
+      })}
       {/* three dot is spread data */}
-      <RestrauntCard {...restrauntData[0].data} />
-      <RestrauntCard {...restrauntData[1].data} />
-      <RestrauntCard {...restrauntData[2].data} />
+
+      {/* <RestrauntCard {...restrauntData[1].data} />
+      <RestrauntCard {...restrauntData[2].data} /> */}
 
       {/* <RestrauntCard />
       <RestrauntCard />
