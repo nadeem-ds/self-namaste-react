@@ -457,16 +457,19 @@ const restrauntData = [
 ];
 
 const RestrauntCard = ({ restaurant }) => {
+  const { name, cuisines, totalRatingsString, cloudinaryImageId } =
+    restaurant.data;
+
   const imgURL =
     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
   return (
     <div className="card">
-      <img src={imgURL + restaurant.data?.cloudinaryImageId} />
-      <h2>{restaurant.data?.name}</h2>
-      {/* <h3>{restaurant.cousinName.join(", ")}</h3> */}
-      <h3>{restaurant.data?.cuisines.join(", ")}</h3>
+      <img src={imgURL + cloudinaryImageId} />
+      <h2>{name}</h2>
+      {/* <h3>{cousinName.join(", ")}</h3> */}
+      <h3>{cuisines.join(", ")}</h3>
 
-      <h4>{restaurant.data?.totalRatingsString} </h4>
+      <h4>{totalRatingsString} </h4>
     </div>
   );
 };
