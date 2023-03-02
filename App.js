@@ -456,10 +456,12 @@ const restrauntData = [
   },
 ];
 
-const RestrauntCard = ({ restaurant }) => {
-  const { name, cuisines, totalRatingsString, cloudinaryImageId } =
-    restaurant.data;
-
+const RestrauntCard = ({
+  name,
+  cuisines,
+  totalRatingsString,
+  cloudinaryImageId,
+}) => {
   const imgURL =
     "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
   return (
@@ -477,9 +479,10 @@ const RestrauntCard = ({ restaurant }) => {
 const Body = () => {
   return (
     <div className="restrauntlist">
-      <RestrauntCard restaurant={restrauntData[0]} />
-      <RestrauntCard restaurant={restrauntData[1]} />
-      <RestrauntCard restaurant={restrauntData[2]} />
+      {/* three dot is spread data */}
+      <RestrauntCard {...restrauntData[0].data} />
+      <RestrauntCard {...restrauntData[1].data} />
+      <RestrauntCard {...restrauntData[2].data} />
 
       {/* <RestrauntCard />
       <RestrauntCard />
