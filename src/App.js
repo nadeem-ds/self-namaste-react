@@ -5,11 +5,6 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 //Name import
 // import { Title } from "./components/Header";
-//another way to do this
-
-// import { Title, Header } from "./components/Header";
-
-// import * as XYZ from "./components/Header";
 
 /**
     Header
