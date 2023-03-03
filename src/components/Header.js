@@ -16,7 +16,7 @@ export const Title = () => (
   // </h1>
 );
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -33,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+// export default Header;
