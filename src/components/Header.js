@@ -1,7 +1,7 @@
 import React from "react";
 import foodLogo from "../../foo-logo.jpg";
 
-export const Title = () => (
+const Title = () => (
   <a href="/">
     <img
       // src="./foo-logo.jpg"
@@ -16,7 +16,7 @@ export const Title = () => (
   // </h1>
 );
 
-export const Header = () => {
+const Header = () => {
   return (
     <div className="header">
       <Title />
@@ -33,4 +33,4 @@ export const Header = () => {
   );
 };
 
-// export default Header;
+export default Header;

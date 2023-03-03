@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 //default import
-// import Header from "./components/Header";
+import Header from "./components/Header";
 //Name import
 // import { Title } from "./components/Header";
 //another way to do this
 
-import { Title, Header } from "./components/Header";
+// import { Title, Header } from "./components/Header";
 
 // import * as XYZ from "./components/Header";
 
@@ -492,7 +492,6 @@ const AppLayout = () => {
       {/* <XYZ.Header />
       <XYZ.Title /> */}
       <Header />
-      <Title />
       <Body />
       <Footer />
     </>
