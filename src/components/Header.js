@@ -1,4 +1,3 @@
-import React from "react";
 import foodLogo from "../../foo-logo.jpg";
 
 const Title = () => (
@@ -10,7 +9,6 @@ const Title = () => (
       alt="Logo"
     />
   </a>
- 
 );
 
 const Header = () => {
