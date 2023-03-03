@@ -480,7 +480,7 @@ const Body = () => {
   return (
     <div className="restrauntlist">
       {restrauntData.map((restaurant) => {
-        return <RestrauntCard {...restaurant.data} />;
+        return <RestrauntCard key={restaurant.data.id} {...restaurant.data} />;
       })}
       {/* three dot is spread data */}
 
