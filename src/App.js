@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import foodLogo from "./foo-logo.jpg";
+import Header from "./components/Header";
+import { Title } from "./components/Header";
+
 /**
     Header
       -logo
@@ -23,38 +25,6 @@ import foodLogo from "./foo-logo.jpg";
      -copyright
 
   */
-
-const Title = () => (
-  <a href="/">
-    <img
-      // src="./foo-logo.jpg"
-      src={foodLogo}
-      className="logo"
-      // src="https://yt3.googleusercontent.com/ytc/AL5GRJXudT76175T4x4n7eslWM1YkgNLHDSSqfXGoadl=s900-c-k-c0x00ffffff-no-rj"
-      alt="Logo"
-    />
-  </a>
-  // <h1 id="heading1" key="head1">
-  //   Food Villa
-  // </h1>
-);
-
-const HeaderComponent = () => {
-  return (
-    <div className="header">
-      <Title />
-
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const restrauntData = [
   //   {
@@ -507,10 +477,12 @@ const Footer = () => {
     </div>
   );
 };
+
 const AppLayout = () => {
   return (
     <>
-      <HeaderComponent />
+      <Header />
+      {/* <Title /> */}
       <Body />
       <Footer />
     </>
