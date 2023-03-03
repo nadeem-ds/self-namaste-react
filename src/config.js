@@ -2,36 +2,7 @@ export const IMG_CDN =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
 export const restrauntData = [
-  //   {
-  //   img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
-  //   name: "Burger King",
-  //   cousinName: ["Cousins", "American"],
-  //   rating: "4.3",
-  // },
-  //   {
-  //   img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
-  //   name: "Burger King",
-  //   cousinName: ["Cousins", "American"],
-  //   rating: "4.3",
-  // },
-  //   {
-  //   img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
-  //   name: "Burger King",
-  //   cousinName: ["Cousins", "American"],
-  //   rating: "4.3",
-  // },
-  //   {
-  //   img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
-  //   name: "Burger King",
-  //   cousinName: ["Cousins", "American"],
-  //   rating: "4.3",
-  // },
-  //   {
-  //   img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/bdcd233971b7c81bf77e1fa4471280eb",
-  //   name: "Burger King",
-  //   cousinName: ["Cousins", "American"],
-  //   rating: "4.3",
-  // },
+ 
 
   {
     type: "restaurant",
