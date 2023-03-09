@@ -2,8 +2,12 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <div>
-      <h1>Loading shimmer UI .......................</h1>
+    <div className="restrauntlist">
+      {Array(10)
+        .fill("")
+        .map((e,index) => (
+          <div key={index} className="shimmer-card"></div>
+        ))}
     </div>
   );
 };
