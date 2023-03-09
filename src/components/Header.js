@@ -1,6 +1,11 @@
 import { useState } from "react";
 import foodLogo from "../../foo-logo.jpg";
 
+const loggedInUser = () => {
+  //some validation done here
+  return false;
+};
+
 const Title = () => (
   <a href="/">
     <img src={foodLogo} className="logo" alt="Logo" />
@@ -9,6 +14,7 @@ const Title = () => (
 
 const Header = () => {
   // let title = "Food Villa";
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const [title, setTitle] = useState("Food Villa");
 
@@ -30,6 +36,13 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+
+      {/* {loggedInUser() ? <button>Logout</button> : <button>Log in</button>} */}
+      {isLoggedIn ? (
+        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Log in</button>
+      )}
     </div>
   );
 };

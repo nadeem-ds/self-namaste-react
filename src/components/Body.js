@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { restrauntData } from "../config";
 import RestrauntCard from "./RestrauntCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //   const searchText = "biryani";
-  const [restaurants, setRestaurants] = useState(restrauntData);
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredRestraunt, setFilteredRestraunt] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   // console.log("render() for sereach");
@@ -25,17 +27,28 @@ const Body = () => {
     const json = await data.json();
     // console.log(json);
     // console.log(json?.data?.cards[2]?.data?.data?.cards);
-    setRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestraunt(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   function filterRestraunt(searchText, restaurants) {
     const filterData = restaurants.filter((restaurant) =>
-      restaurant.data.name.includes(searchText)
+      restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
     );
     return filterData;
   }
 
-  return (
+  // if (!allRestaurants) return null;
+
+  // if (filteredRestraunt?.length == 0)
+  //   return <h1>No restaurant found with your match</h1>;
+  // if (json?.data?.cards[2]?.data?.data?.cards.length == 0) {
+  //   <Shimmer />;
+  // }
+
+  return filteredRestraunt?.length == 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="searchContainer">
         <input
@@ -49,10 +62,10 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             //need to filter the data
-            const data = filterRestraunt(searchText, restaurants);
+            const data = filterRestraunt(searchText, filteredRestraunt);
             //after filter update the state
 
-            setRestaurants(data);
+            setAllRestaurants(data);
           }}
         >
           Search
@@ -60,7 +73,7 @@ const Body = () => {
         {/* {searchText} */}
       </div>
       <div className="restrauntlist">
-        {restaurants.map((restaurant) => {
+        {allRestaurants.map((restaurant) => {
           return (
             <RestrauntCard key={restaurant.data.id} {...restaurant.data} />
           );
