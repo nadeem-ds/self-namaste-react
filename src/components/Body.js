@@ -11,13 +11,14 @@ const Body = () => {
 
   // console.log("render() for sereach");
 
-  console.log("restaurants");
+  // console.log("restaurants");
 
   useEffect(() => {
     // This place is best API Call
     // console.log("render useeffect");
     getRestrauntList();
   }, []);
+  // console.log(filteredRestraunt);
 
   async function getRestrauntList() {
     const data = await fetch(
@@ -38,7 +39,7 @@ const Body = () => {
     return filterData;
   }
 
-  // if (!allRestaurants) return null;
+  if (!allRestaurants) return null;
 
   // if (filteredRestraunt?.length == 0)
   //   return <h1>No restaurant found with your match</h1>;
@@ -46,9 +47,10 @@ const Body = () => {
   //   <Shimmer />;
   // }
 
-  return filteredRestraunt?.length == 0 ? (
+  return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
+    // return (
     <>
       <div className="searchContainer">
         <input
@@ -62,18 +64,18 @@ const Body = () => {
           className="search-btn"
           onClick={() => {
             //need to filter the data
-            const data = filterRestraunt(searchText, filteredRestraunt);
+            const data = filterRestraunt(searchText, allRestaurants);
+            console.log("data return of filtered", data);
             //after filter update the state
 
-            setAllRestaurants(data);
+            setFilteredRestraunt(data);
           }}
         >
           Search
         </button>
-        {/* {searchText} */}
       </div>
       <div className="restrauntlist">
-        {allRestaurants.map((restaurant) => {
+        {filteredRestraunt.map((restaurant) => {
           return (
             <RestrauntCard key={restaurant.data.id} {...restaurant.data} />
           );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import foodLogo from "../../foo-logo.jpg";
 
 const loggedInUser = () => {
@@ -18,6 +18,16 @@ const Header = () => {
 
   const [title, setTitle] = useState("Food Villa");
 
+  // useEffect(() => {
+  //   //re-render again and again
+  //   console.log("useEffect render");
+  // });
+
+  // useEffect(() => {
+  //re render once
+  //   console.log("useEffect render");
+  // }, []);
+
   console.log("render()");
 
   return (
@@ -26,7 +36,7 @@ const Header = () => {
 
       <h1> {title}</h1>
 
-      <button onClick={() => setTitle("New title ")}>Change title</button>
+      {/* <button onClick={() => setTitle("New title ")}>Change title</button> */}
 
       <div className="nav-items">
         <ul>
