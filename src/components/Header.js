@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import foodLogo from "../../foo-logo.jpg";
+import { Link } from "react-router-dom";
 
 const loggedInUser = () => {
   //some validation done here
@@ -34,16 +35,27 @@ const Header = () => {
     <div className="header">
       <Title />
 
-      <h1> {title}</h1>
+      {/* <h1> {title}</h1> */}
 
       {/* <button onClick={() => setTitle("New title ")}>Change title</button> */}
 
       <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
+        <ul className="nav-links">
+          <Link to="/">
+            <li className="nav-link-item">Home</li>
+          </Link>
+          <Link to="/about">
+            <li className="nav-link-item">About</li>
+          </Link>
+          {/* <a href="/about">
+            <li>About</li>
+          </a> */}
+          <Link to="/contact">
+            <li className="nav-link-item">Contact</li>
+          </Link>
+          <Link to="/cart">
+            <li className="nav-link-item">Cart</li>
+          </Link>
         </ul>
       </div>
 
