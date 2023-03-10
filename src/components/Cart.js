@@ -1,4 +1,4 @@
-const Card = () => {
+const Cart = () => {
   return (
     <div>
       <h1>This is cart page</h1>
@@ -6,4 +6,4 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default Cart;
