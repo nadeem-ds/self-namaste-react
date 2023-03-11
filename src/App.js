@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 // import RestrauntMenu from "./components/RestrauntMenu";
 import RestrauntMenu from "./components/RestrauntMenu";
+import NewRestrauntMenu from "./components/NewRestrauntMenu";
 
 /**
     Header
@@ -74,7 +75,7 @@ const appRoute = createBrowserRouter([
       },
       {
         path: "/restraunt/:id",
-        element: <RestrauntMenu />,
+        element: <NewRestrauntMenu />,
       },
     ],
   },
