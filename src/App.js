@@ -70,7 +70,7 @@ const appRoute = createBrowserRouter([
           {
             //it is equivalent to localhost:1234/about/profile
             path: "profile",
-            component: <Profile />,
+            element: <Profile />,
           },
         ],
       },
