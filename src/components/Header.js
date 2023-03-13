@@ -15,7 +15,7 @@ const Title = () => (
 
 const Header = () => {
   // let title = "Food Villa";
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [title, setTitle] = useState("Food Villa");
 
@@ -63,7 +63,9 @@ const Header = () => {
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
-        <button onClick={() => setIsLoggedIn(true)}>Log in</button>
+        <Link to="/login">
+          <button onClick={() => setIsLoggedIn(true)}>Log in</button>
+        </Link>
       )}
     </div>
   );

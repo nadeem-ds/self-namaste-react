@@ -11,6 +11,8 @@ import Cart from "./components/Cart";
 // import RestrauntMenu from "./components/RestrauntMenu";
 import RestrauntMenu from "./components/RestrauntMenu";
 import NewRestrauntMenu from "./components/NewRestrauntMenu";
+import LoginPage from "./components/LoginPage";
+import Profile from "./components/Profile";
 
 /**
     Header
@@ -64,6 +66,13 @@ const appRoute = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            //it is equivalent to localhost:1234/about/profile
+            path: "profile",
+            component: <Profile />,
+          },
+        ],
       },
       {
         path: "/contact",
@@ -72,6 +81,10 @@ const appRoute = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
       {
         path: "/restraunt/:id",
