@@ -2,17 +2,23 @@
 
 import { Outlet, Link } from "react-router-dom";
 import Profile from "./Profile";
+import ProfileClass from "./ProfileClass";
 
 const About = () => {
   return (
     <div>
       <h1>About Us page</h1>
 
-      <Outlet />
+      {/* function component */}
+
+      {/* <Outlet />
 
       <Link to="profile">
         <button>Auhor page </button>
-      </Link>
+      </Link> */}
+
+      <Profile />
+      <ProfileClass name={"Nadeem "} />
     </div>
   );
 };
