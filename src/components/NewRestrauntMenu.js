@@ -2,12 +2,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN } from "../config";
+import useRestrauntMenu from "../utils/useRestrauntMenu";
 import Shimmer from "./Shimmer";
 const NewRestrauntMenu = () => {
-  const [menuData, setMenuData] = useState(null);
+  // const [menuData, setMenuData] = useState(null);
 
   const params = useParams();
   const { id } = params;
+
+  const menuData = useRestrauntMenu(id);
 
   //   https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId=${resId}
 
@@ -26,60 +29,7 @@ const NewRestrauntMenu = () => {
   //   );
   //   data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards[0].card.info.name
 
-  const URL =
-    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2507549&lng=77.41568889999999&restaurantId=" +
-    id;
 
-  const URL1 =
-    "https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId=" +
-    id;
-
-  //   const URL =
-  //     "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2507549&lng=77.41568889999999&restaurantId=107521";
-
-  useEffect(() => {
-    getRestrauntMenu();
-  }, []);
-
-  async function getRestrauntMenu() {
-    const data = await fetch(URL1);
-    const json = await data.json();
-
-    console.log("Menu data ", json.data);
-    setMenuData(json?.data);
-
-    // const dataItem = Object.values(json?.data?.menu?.items);
-
-    // console.log("this is new data item variable", dataItem);
-
-    // setMenuData(json?.data?.menu?.items);
-    // console.log("state variable", menuData);
-    // console.log(Object.values(menuData.menu.items));
-    // console.log(Object.values(menuData));
-    // console.log("Menu data is ", menuData?.menu?.items);
-    // console.log(Object.values(menuData?.menu?.items));
-
-    // const menuListData = Object.values(menuData?.menu?.items);
-
-    // console.log("MenuListData", menuListData);
-    // console.log("state variable with array obj", Object.values(menuData));
-
-    // setMenuDish(json.data);
-    // data.cards[2].groupedCard
-    // data.cards[2].groupedCard.cardGroupMap.REGULAR;
-    // console.log("Menu dish item ", menuDish.cards);
-    // console.log(
-    //   "Menu dish item find data",
-    //   menuDish?.cards[2]?.card?.card?.itemCards?.card
-    // );
-
-    // {
-    //   (menuDish?.cards[1]?.card?.card?.itemCards).map((item) => (
-    //     <li key={item.card.info.id}>{item.info.name}</li>
-    //   ));
-    // }
-    // console.log("Object values", Object.values(menuDish.cards));
-  }
 
   //   if (!menuData) {
   //     return <Shimmer />;
