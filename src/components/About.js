@@ -44,12 +44,12 @@ class About extends Component {
     // this.setState({ name: responce.name, userPic: responce.avatar_url });
     // console.log(responce);
     // console.log(responce.name);
-    console.log(" parent- component did mount");
+    // console.log(" parent- component did mount");
   }
 
   render() {
     console.log(" parent- render");
-    
+
     return (
       <div>
         <h1>About Us page</h1>
@@ -64,8 +64,8 @@ class About extends Component {
         <button>Auhor page </button>
       </Link> */}
 
-        {/* <Profile /> */}
-        <ProfileClass name={"Nadeem "} />
+        <Profile />
+        {/* <ProfileClass name={"Nadeem "} /> */}
       </div>
     );
   }

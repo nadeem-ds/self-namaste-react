@@ -16,7 +16,7 @@ class ProfileClass extends Component {
       userPic: "demo pic",
     };
 
-    console.log(" child-constructor");
+    // console.log(" child-constructor");
   }
 
   // componentDidMount() {
@@ -30,20 +30,23 @@ class ProfileClass extends Component {
   //   console.log("  child- component did mount");
   // }
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      console.log("setInterval");
+    }, 1000);
     // best palce for api call
 
-    const url = "https://api.github.com/users/chetannada";
-    const data = await fetch(url);
-    const responce = await data.json();
-    this.setState({ name: responce.name, userPic: responce.avatar_url });
-    console.log(responce);
-    console.log(responce.name);
+    // const url = "https://api.github.com/users/chetannada";
+    // const data = await fetch(url);
+    // const responce = await data.json();
+    // this.setState({ name: responce.name, userPic: responce.avatar_url });
+    // console.log(responce);
+    // console.log(responce.name);
 
-    console.log(" parent- component did mount");
+    // console.log(" parent- component did mount");
 
-    console.log(this.state.name);
-    console.log(this.state.userPic);
+    // console.log(this.state.name);
+    // console.log(this.state.userPic);
   }
 
   componentDidUpdate() {
@@ -51,11 +54,12 @@ class ProfileClass extends Component {
   }
 
   componentWillUnmount() {
+    clearInterval(this.interval);
     console.log("component destroy");
   }
 
   render() {
-    console.log(" child- render");
+    // console.log(" child- render");
 
     return (
       <div>
@@ -76,8 +80,8 @@ class ProfileClass extends Component {
         </button> */}
 
         <h1>About Us page</h1>
-        <h1>Name:{this.state.name}</h1>
-        <img src={this.state.userPic} alt="demo pic" />
+        {/* <h1>Name:{this.state.name}</h1>
+        <img src={this.state.userPic} alt="demo pic" /> */}
       </div>
     );
   }
