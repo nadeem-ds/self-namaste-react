@@ -5,12 +5,12 @@ const useRestrauntMenu = (id) => {
 
   console.log("id", id);
   //first fetch the data from server
-  //   const URL =
-  //     "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2507549&lng=77.41568889999999&restaurantId=" +
-  //     id;
+  const URL =
+    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=23.2507549&lng=77.41568889999999&restaurantId=" +
+    id;
 
   const URL1 =
-    "https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId="+
+    "https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId=" +
     id;
 
   //   const URL =

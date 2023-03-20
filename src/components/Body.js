@@ -5,6 +5,7 @@ import { restrauntData } from "../config";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { filterRestraunt } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   //   const searchText = "biryani";
@@ -33,6 +34,12 @@ const Body = () => {
     // console.log(json?.data?.cards[2]?.data?.data?.cards);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestraunt(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
+  //create a custom hook
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>🔴🔴Offline please check your internet connection !!!</h1>;
   }
 
   if (!allRestaurants) return null;

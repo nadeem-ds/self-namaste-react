@@ -12,29 +12,6 @@ const NewRestrauntMenu = () => {
 
   const menuData = useRestrauntMenu(id);
 
-  //   https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId=${resId}
-
-  //   const {} = menuData.data.cards;
-  //   console.log(
-  //     "data received",
-  //     menuData?.data?.cards[0]?.card?.card?.info?.name
-  //   );
-
-  //   console.log(params);
-  //   console.log("res id", menuData?.data?.cards[0]?.card?.card?.info?.id);
-  //   console.log(
-  //     "first dish name",
-  //     menuData.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
-  //       .itemCards[0].card.info.name
-  //   );
-  //   data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards[0].card.info.name
-
-
-
-  //   if (!menuData) {
-  //     return <Shimmer />;
-  //   }
-
   return !menuData ? (
     <Shimmer />
   ) : (
