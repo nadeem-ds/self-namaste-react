@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,6 +13,7 @@ import RestrauntMenu from "./components/RestrauntMenu";
 import NewRestrauntMenu from "./components/NewRestrauntMenu";
 import LoginPage from "./components/LoginPage";
 import Profile from "./components/Profile";
+// import Instamart from "./components/Instamart";
 
 /**
     Header
@@ -37,16 +38,24 @@ import Profile from "./components/Profile";
 
   */
 
+//we are going to use lazy loading
+
+const Instamart = lazy(() => import("./components/Instamart"));
+
 const AppLayout = () => {
   return (
     <>
       <Header />
+
       {/* for nested route we need one compnent outlet componet */}
+
       <Outlet />
+
       {/* <About />
       <Body />
       <Contact />
       <Card /> */}
+
       <Footer />
     </>
   );
@@ -85,6 +94,14 @@ const appRoute = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense>
+            <Instamart />
+          </Suspense>
+        ),
       },
       {
         path: "/restraunt/:id",

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import foodLogo from "../../foo-logo.jpg";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const loggedInUser = () => {
   //some validation done here
@@ -19,6 +20,8 @@ const Header = () => {
 
   const [title, setTitle] = useState("Food Villa");
 
+  const online = useOnline();
+
   // useEffect(() => {
   //   //re-render again and again
   //   console.log("useEffect render");
@@ -34,6 +37,8 @@ const Header = () => {
   return (
     <div className="header">
       <Title />
+
+      {online ? "✅" : "🔴"}
 
       {/* <h1> {title}</h1> */}
 
@@ -55,6 +60,9 @@ const Header = () => {
           </Link>
           <Link to="/cart">
             <li className="nav-link-item">Cart</li>
+          </Link>
+          <Link to="/instamart">
+            <li className="nav-link-item">Instamart</li>
           </Link>
         </ul>
       </div>
