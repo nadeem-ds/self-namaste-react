@@ -4,7 +4,9 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import About from "./components/About";
+
+// implementing this on the lazy loading
+// import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
@@ -13,6 +15,9 @@ import RestrauntMenu from "./components/RestrauntMenu";
 import NewRestrauntMenu from "./components/NewRestrauntMenu";
 import LoginPage from "./components/LoginPage";
 import Profile from "./components/Profile";
+import Shimmer from "./components/Shimmer";
+
+//we are taking this on the lazy loading
 // import Instamart from "./components/Instamart";
 
 /**
@@ -39,8 +44,11 @@ import Profile from "./components/Profile";
   */
 
 //we are going to use lazy loading
-
+//instamart lazy loading
 const Instamart = lazy(() => import("./components/Instamart"));
+
+//about page lazy loading
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   return (
@@ -74,7 +82,11 @@ const appRoute = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             //it is equivalent to localhost:1234/about/profile
@@ -98,7 +110,7 @@ const appRoute = createBrowserRouter([
       {
         path: "/instamart",
         element: (
-          <Suspense>
+          <Suspense fallback={<Shimmer />}>
             <Instamart />
           </Suspense>
         ),
