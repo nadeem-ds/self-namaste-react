@@ -33,7 +33,7 @@ class About extends Component {
       // userPic: "demo pic",
     };
 
-    console.log(" parent- constructor");
+    // console.log(" parent- constructor");
   }
 
   componentDidMount() {
@@ -48,7 +48,7 @@ class About extends Component {
   }
 
   render() {
-    console.log(" parent- render");
+    // console.log(" parent- render");
 
     return (
       <div>

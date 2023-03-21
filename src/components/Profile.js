@@ -7,39 +7,39 @@ const Profile = () => {
   useEffect(() => {
     //it will work like componentwillunmount
 
-    console.log("useEffect");
+    // console.log("useEffect");
 
     // return () => {
     //   setInterval(() => {
     //     console.log("useeffect set interval");
     //   }, 1000);
     // };
-    const timer = setInterval(() => {
-      console.log("useeffect set interval");
-    }, 1000);
+    // const timer = setInterval(() => {
+    //   console.log("useeffect set interval");
+    // }, 1000);
 
     return () => {
-      clearInterval(timer);
-      console.log("useeffect return");
+      // clearInterval(timer);
+      // console.log("useeffect return");
     };
   }, []);
 
-  console.log("render");
+  // console.log("render");
 
   return (
     <div>
       <h1>Profile page about the author</h1>
-      <h2>Count:{count}</h2>
-      <h2>Count2:{count2}</h2>
+      {/* <h2>Count:{count}</h2>
+      <h2>Count2:{count2}</h2> */}
 
-      <button
+      {/* <button
         onClick={() => {
           setCount((prev) => prev + 1);
           setCount2((count) => count + 1);
         }}
       >
         INC Count
-      </button>
+      </button> */}
     </div>
   );
 };

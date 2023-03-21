@@ -32,7 +32,7 @@ const Header = () => {
   //   console.log("useEffect render");
   // }, []);
 
-  console.log("render()");
+  // console.log("render()");
 
   return (
     <div className="header">

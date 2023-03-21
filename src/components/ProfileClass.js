@@ -31,31 +31,28 @@ class ProfileClass extends Component {
   // }
 
   componentDidMount() {
-    this.interval = setInterval(() => {
-      console.log("setInterval");
-    }, 1000);
+    // this.interval = setInterval(() => {
+    //   console.log("setInterval");
+    // }, 1000);
     // best palce for api call
-
     // const url = "https://api.github.com/users/chetannada";
     // const data = await fetch(url);
     // const responce = await data.json();
     // this.setState({ name: responce.name, userPic: responce.avatar_url });
     // console.log(responce);
     // console.log(responce.name);
-
     // console.log(" parent- component did mount");
-
     // console.log(this.state.name);
     // console.log(this.state.userPic);
   }
 
   componentDidUpdate() {
-    console.log("componet did update");
+    // console.log("componet did update");
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
-    console.log("component destroy");
+    // clearInterval(this.interval);
+    // console.log("component destroy");
   }
 
   render() {
