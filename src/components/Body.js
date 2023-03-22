@@ -7,7 +7,8 @@ import Shimmer from "./Shimmer";
 import { filterRestraunt } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 
-const Body = () => {
+const Body = ({ user }) => {
+  console.log("body", user);
   //   const searchText = "biryani";
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestraunt, setFilteredRestraunt] = useState([]);
@@ -84,7 +85,7 @@ const Body = () => {
               to={"/restraunt/" + restaurant.data.id}
               key={restaurant.data.id}
             >
-              <RestrauntCard key={restaurant.data.id} {...restaurant.data} />
+              <RestrauntCard {...restaurant.data} user={user} />
             </Link>
           );
         })}
