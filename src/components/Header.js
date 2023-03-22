@@ -35,7 +35,7 @@ const Header = () => {
   // console.log("render()");
 
   return (
-    <div className="flex justify-between bg-pink-50 shadow-md">
+    <div className="flex justify-between bg-pink-50 shadow-md sm:bg-blue-300 md:bg-yellow-200">
       <Title />
 
       {/* {online ? "✅" : "🔴"} */}

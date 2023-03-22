@@ -57,14 +57,14 @@ const Body = () => {
     <>
       <div className="searchContainer p-5 bg-pink-50 my-5 flex justify-center">
         <input
-          className="seach-input w-50 rounded-xl"
+          className="focus:bg-gray-300 p-2 m-2"
           type="text"
           value={searchText}
           placeholder="search your food"
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn m-3 p-2 bg-purple-500 rounded-lg text-white"
+          className="search-btn m-3 p-2 bg-purple-500 hover:bg-gray-700 rounded-lg text-white"
           onClick={() => {
             //need to filter the data
             const data = filterRestraunt(searchText, allRestaurants);
