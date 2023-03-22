@@ -28,7 +28,12 @@
 ### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/lets-get-classy
 
 
-## chapter 9 jo-dikhta-h-wahi-bikta-h
+## chapter 9 optimize-our-app
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/optimize-our-app
+
+
+## chapter 10 jo-dikhta-h-wahi-bikta-h
 ### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/jo-dikhta-h-wahi-bikta-h
+
 
 
