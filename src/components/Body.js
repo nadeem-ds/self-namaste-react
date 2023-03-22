@@ -55,16 +55,16 @@ const Body = () => {
   ) : (
     // return (
     <>
-      <div className="searchContainer">
+      <div className="searchContainer p-5 bg-pink-50 my-5 flex justify-center">
         <input
+          className="seach-input w-50 rounded-xl"
           type="text"
           value={searchText}
           placeholder="search your food"
-          className="seach-input"
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="search-btn m-3 p-2 bg-purple-500 rounded-lg text-white"
           onClick={() => {
             //need to filter the data
             const data = filterRestraunt(searchText, allRestaurants);
@@ -77,7 +77,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restrauntlist">
+      <div className="flex flex-wrap">
         {filteredRestraunt.map((restaurant) => {
           return (
             <Link

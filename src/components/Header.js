@@ -10,7 +10,7 @@ const loggedInUser = () => {
 
 const Title = () => (
   <a href="/">
-    <img src={foodLogo} className="logo" alt="Logo" />
+    <img src={foodLogo} className="h-40 px-4" alt="Logo" />
   </a>
 );
 
@@ -35,34 +35,34 @@ const Header = () => {
   // console.log("render()");
 
   return (
-    <div className="header">
+    <div className="flex justify-between bg-pink-50 shadow-md">
       <Title />
 
-      {online ? "✅" : "🔴"}
+      {/* {online ? "✅" : "🔴"} */}
 
       {/* <h1> {title}</h1> */}
 
       {/* <button onClick={() => setTitle("New title ")}>Change title</button> */}
 
       <div className="nav-items">
-        <ul className="nav-links">
+        <ul className="flex py-10">
           <Link to="/">
-            <li className="nav-link-item">Home</li>
+            <li class="px-2">Home</li>
           </Link>
           <Link to="/about">
-            <li className="nav-link-item">About</li>
+            <li class="px-2">About</li>
           </Link>
           {/* <a href="/about">
             <li>About</li>
           </a> */}
           <Link to="/contact">
-            <li className="nav-link-item">Contact</li>
+            <li class="px-2">Contact</li>
           </Link>
           <Link to="/cart">
-            <li className="nav-link-item">Cart</li>
+            <li class="px-2">Cart</li>
           </Link>
           <Link to="/instamart">
-            <li className="nav-link-item">Instamart</li>
+            <li class="px-2">Instamart</li>
           </Link>
         </ul>
       </div>
