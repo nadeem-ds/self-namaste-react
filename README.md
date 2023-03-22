@@ -12,3 +12,23 @@
 ### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/Talk-is-cheap-show-me-code
 
 
+## chapter 5 Lets-get-hooked
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/Lets-get-hooked
+
+
+## chapter 6 Exploring-the-world
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/Exploring-the-world
+
+
+## chapter 7 finding-the-path
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/finding-the-path
+
+
+## chapter 8 lets-get-classy
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/lets-get-classy
+
+
+## chapter 9 jo-dikhta-h-wahi-bikta-h
+### Link :-https://github.com/nadeem-ds/self-namaste-react/tree/jo-dikhta-h-wahi-bikta-h
+
+
