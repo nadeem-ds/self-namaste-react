@@ -4,6 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 import Profile from "./Profile";
 import ProfileClass from "./ProfileClass";
 import { Component } from "react";
+import Usercontext from "../utils/UserContext";
 
 const About1 = () => {
   return (
@@ -53,6 +54,18 @@ class About extends Component {
     return (
       <div>
         <h1>About Us page</h1>
+
+        <Usercontext.Consumer>
+          {(value) => (
+            <h2
+              className="m-3 p-3 font-bold
+          "
+            >
+              {value.user.name}
+            </h2>
+          )}
+        </Usercontext.Consumer>
+
         {/* <h1>Name:{this.state.name}</h1>
         <img src={this.state.userPic} alt="demo pic" /> */}
 

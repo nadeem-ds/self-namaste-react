@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -16,6 +16,7 @@ import NewRestrauntMenu from "./components/NewRestrauntMenu";
 import LoginPage from "./components/LoginPage";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 //we are taking this on the lazy loading
 // import Instamart from "./components/Instamart";
@@ -51,20 +52,22 @@ const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
+  const [userData, setUserData] = useState({
+    name: "Nad",
+    email: "nad@gmail.com",
+  });
+
   return (
     <>
-      <Header />
-
-      {/* for nested route we need one compnent outlet componet */}
-
-      <Outlet />
-
-      {/* <About />
-      <Body />
-      <Contact />
-      <Card /> */}
-
-      <Footer />
+      <UserContext.Provider
+        value={{
+          user: userData,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </>
   );
 };

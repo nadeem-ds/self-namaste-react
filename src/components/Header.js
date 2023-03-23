@@ -24,9 +24,9 @@ const Header = () => {
   const online = useOnline();
 
   const { user } = useContext(Usercontext);
-  console.log("user context--", user);
-  console.log("user context name--", user.name);
-  console.log("user context email--", user.email);
+  // console.log("user context--", user);
+  // console.log("user context name--", user.name);
+  // console.log("user context email--", user.email);
 
   // useEffect(() => {
   //   //re-render again and again

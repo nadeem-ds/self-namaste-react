@@ -77,6 +77,12 @@ const Body = ({ user }) => {
         >
           Search
         </button>
+
+        
+
+
+
+
       </div>
       <div className="flex flex-wrap">
         {filteredRestraunt.map((restaurant) => {
