@@ -52,7 +52,7 @@ const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
-  const [userData, setUserData] = useState({
+  const [user, setUser] = useState({
     name: "Nad",
     email: "nad@gmail.com",
   });
@@ -61,7 +61,8 @@ const AppLayout = () => {
     <>
       <UserContext.Provider
         value={{
-          user: userData,
+          user: user,
+          setUser: setUser,
         }}
       >
         <Header />
@@ -81,14 +82,7 @@ const appRoute = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Body
-            user={{
-              name: "Nadeem",
-              email: "support@nad.com",
-            }}
-          />
-        ),
+        element: <Body />,
       },
       {
         path: "/about",

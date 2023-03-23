@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 import { restrauntData } from "../config";
@@ -6,24 +6,23 @@ import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { filterRestraunt } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+// import UserContext from "../utils/UserContext";
+import Usercontext from "../utils/UserContext";
 
-const Body = ({ user }) => {
-  console.log("body", user);
-  //   const searchText = "biryani";
+const Body = () => {
+  const { user, setUser } = useContext(Usercontext);
+  console.log("user context", user);
+  // console.log("setuser context", setUser);
+
+  // console.log("body", user);
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestraunt, setFilteredRestraunt] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  // console.log("render() for sereach");
-
-  // console.log("restaurants");
-
   useEffect(() => {
     // This place is best API Call
-    // console.log("render useeffect");
     getRestrauntList();
   }, []);
-  // console.log(filteredRestraunt);
 
   async function getRestrauntList() {
     const data = await fetch(
@@ -44,12 +43,6 @@ const Body = ({ user }) => {
   }
 
   if (!allRestaurants) return null;
-
-  // if (filteredRestraunt?.length == 0)
-  //   return <h1>No restaurant found with your match</h1>;
-  // if (json?.data?.cards[2]?.data?.data?.cards.length == 0) {
-  //   <Shimmer />;
-  // }
 
   return allRestaurants?.length === 0 ? (
     <Shimmer />
@@ -78,11 +71,22 @@ const Body = ({ user }) => {
           Search
         </button>
 
-        
-
-
-
-
+        {/* updating the context */}
+        <input
+          type={"text"}
+          value={user.name}
+          placeholder="Name"
+          onChange={(e) => setUser({ ...user, name: e.target.value })}
+        />
+        <input
+          type={"text"}
+          value={user.email}
+          placeholder="Email"
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+        <button className="search-btn m-3 p-2 bg-purple-500 hover:bg-gray-700 rounded-lg text-white ">
+          Update{" "}
+        </button>
       </div>
       <div className="flex flex-wrap">
         {filteredRestraunt.map((restaurant) => {
