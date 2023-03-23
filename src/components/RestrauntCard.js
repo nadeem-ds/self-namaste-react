@@ -1,13 +1,16 @@
+import React, { useContext } from "react";
+
 import { IMG_CDN } from "../config";
+import Usercontext from "../utils/UserContext";
 
 const RestrauntCard = ({
   name,
   cuisines,
   totalRatingsString,
   cloudinaryImageId,
-  user,
 }) => {
-  console.log("rescard", user.name);
+  const { user } = useContext(Usercontext);
+  // console.log("rescard", user.name);
   // const { nameuser, email } = user;
 
   // console.log(nameuser);
@@ -21,6 +24,7 @@ const RestrauntCard = ({
       <h3>{cuisines.join(", ")}</h3>
 
       <h4>{totalRatingsString} </h4>
+      <h3 className="font-bold">{user.name}</h3>
       {/* <h3>{user.name}</h3> */}
     </div>
   );

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import foodLogo from "../../foo-logo.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import Usercontext from "../utils/UserContext";
 
 const loggedInUser = () => {
   //some validation done here
@@ -21,6 +22,11 @@ const Header = () => {
   const [title, setTitle] = useState("Food Villa");
 
   const online = useOnline();
+
+  const { user } = useContext(Usercontext);
+  console.log("user context--", user);
+  console.log("user context name--", user.name);
+  console.log("user context email--", user.email);
 
   // useEffect(() => {
   //   //re-render again and again
@@ -69,7 +75,10 @@ const Header = () => {
 
       {/* {loggedInUser() ? <button>Logout</button> : <button>Log in</button>} */}
       {isLoggedIn ? (
-        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        <div>
+          <span className="p-10 font-bold text-2xl"> {user.name}</span>
+          <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        </div>
       ) : (
         <Link to="/login">
           <button onClick={() => setIsLoggedIn(true)}>Log in</button>
