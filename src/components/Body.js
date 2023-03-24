@@ -8,10 +8,10 @@ import { filterRestraunt } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 // import UserContext from "../utils/UserContext";
 import Usercontext from "../utils/UserContext";
-
+import { GET_RESTAURANTS_LIST } from "../config";
 const Body = () => {
   const { user, setUser } = useContext(Usercontext);
-  console.log("user context", user);
+  // console.log("user context", user);
   // console.log("setuser context", setUser);
 
   // console.log("body", user);
@@ -25,9 +25,10 @@ const Body = () => {
   }, []);
 
   async function getRestrauntList() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2507549&lng=77.41568889999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(GET_RESTAURANTS_LIST);
+    // const data = await fetch(
+    //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2507549&lng=77.41568889999999&page_type=DESKTOP_WEB_LISTING"
+    // );
 
     const json = await data.json();
     // console.log(json);

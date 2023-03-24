@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
 
   async function getRestaurantInfo() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId=107521"
+      "https://www.swiggy.com/dapi/menu/v4/full?lat=27.8973944&lng=78.0880129&menuId="+resId
     );
     const json = await data.json();
     setRes(json?.data);
