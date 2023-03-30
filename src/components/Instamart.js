@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const Section = ({ title, desc, show, setVisible }) => {
   // const [show, setShow] = useState(false);
@@ -33,6 +35,11 @@ const Section = ({ title, desc, show, setVisible }) => {
 };
 
 const Instamart = () => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addItem(item));
+  };
   // const [sectionConfig, setSectionConfig] = useState({
   //   showProduct: false,
   //   showTeam: false,
@@ -84,6 +91,7 @@ const Instamart = () => {
           </li>
 
           <button
+            onClick={() => handleAddItem(item)}
             className=" m-3 p-3 bg-purple-500 hover:bg-gray-700 rounded-lg
           text-white"
           >

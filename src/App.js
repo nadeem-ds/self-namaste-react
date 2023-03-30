@@ -18,6 +18,14 @@ import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
 
+//working upon the redux
+
+import { Provider } from "react-redux";
+import store from "./utils/store";
+
+
+
+
 //we are taking this on the lazy loading
 // import Instamart from "./components/Instamart";
 
@@ -58,7 +66,7 @@ const AppLayout = () => {
   });
 
   return (
-    <>
+    <Provider store={store}>
       <UserContext.Provider
         value={{
           user: user,
@@ -69,7 +77,7 @@ const AppLayout = () => {
         <Outlet />
         <Footer />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 

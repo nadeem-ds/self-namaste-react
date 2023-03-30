@@ -1,8 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import foodLogo from "../../foo-logo.jpg";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import Usercontext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const loggedInUser = () => {
   //some validation done here
@@ -24,6 +25,20 @@ const Header = () => {
   const online = useOnline();
 
   const { user } = useContext(Usercontext);
+
+  // const cartItems = useSelector((store) => store.cart.items);
+
+  // const cartitem = useSelector((store) => store.cart.items);
+
+  // console.log(cartitem);
+
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log(cartItems);
+  console.log(cartItems.length);
+
+  // console.log(cartItems);
+
   // console.log("user context--", user);
   // console.log("user context name--", user.name);
   // console.log("user context email--", user.email);
@@ -64,11 +79,11 @@ const Header = () => {
           <Link to="/contact">
             <li class="px-2">Contact</li>
           </Link>
-          <Link to="/cart">
-            <li class="px-2">Cart</li>
-          </Link>
           <Link to="/instamart">
             <li class="px-2">Instamart</li>
+          </Link>
+          <Link to="/cart">
+            <li class="px-2">Cart {cartItems.length} item </li>
           </Link>
         </ul>
       </div>
